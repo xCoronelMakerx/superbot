@@ -566,7 +566,8 @@ export class TreasureMapBot {
          return bpercent - apercent || b.rarityIndex - a.rarityIndex;
       });
       for (const hero of heroes) {
-         await sleep(500);
+         //await sleep(500);
+         await sleep(50);
          const percent = (hero.energy / hero.maxEnergy) * 100;
 
          if (
@@ -1101,7 +1102,7 @@ export class TreasureMapBot {
          this.playing = "sleep";
          await this.checkShields();
          logger.info("Will sleep for 10 seconds");
-         await sleep(10 * 1000);
+         await sleep(5 * 1000);
       } while (this.shouldRun);
 
       await this.sleepAllHeroes();
